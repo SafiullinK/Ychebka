@@ -1,0 +1,60 @@
+﻿<Page x:Class="DemoWpf.Pages.RegistrationForServicesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemoWpf.Pages" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegistrationForServicesPage">
+    <Page.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+    </Page.Resources>
+    <Grid Background="MediumPurple">
+        <StackPanel Orientation="Vertical">
+            <TextBlock HorizontalAlignment="Center" FontSize="35">Запись на услугу</TextBlock>
+            <StackPanel Margin="0 20 0 0" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="ServiceImg" Width="130" Height="130"></Image>
+                    <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="0 0 5 0">Название:</TextBlock>
+                            <TextBlock Width="250" TextWrapping="Wrap" x:Name="NameServiceTb"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Margin="0 20 0 0" Orientation="Horizontal">
+                            <TextBlock Margin="0 0 5 0">Длительность:</TextBlock>
+                            <TextBlock x:Name="DurationServiceTb"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock HorizontalAlignment="Center" FontSize="35">Запись</TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" >ФИО:</TextBlock>
+                        <ComboBox MinWidth="100" MaxWidth="500" x:Name="FIOTb"></ComboBox>
+                    </StackPanel>
+                    <StackPanel Margin="0 10" Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0">Дата оказания услуги:</TextBlock>
+                        <DatePicker x:Name="DateServiceDt"></DatePicker>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0">Время оказания услуги:</TextBlock>
+                        <TextBox x:Name="TimeTb" Width="100" PreviewTextInput="TimeTb_PreviewTextInput" LostFocus="TimeTb_LostFocus"/>
+                        <TextBlock Margin="5 0 0 0">Дата окончания:</TextBlock>
+                        <TextBlock Margin="10 0 0 0" Width="150" x:Name="EndServicesTb"></TextBlock>
+                    </StackPanel>
+                    <TextBlock Margin="0 5 0 0" x:Name="ErrorTextBlock"></TextBlock>
+                    <StackPanel HorizontalAlignment="Center" Margin="0 20 0 0" Orientation="Horizontal">
+                        <Button x:Name="RedServClientBtn" Click="RedServClientBtn_Click">Записаться</Button>
+                        <Button x:Name="BackBtn" Margin="5 0 0 0" Click="BackBtn_Click">Назад</Button>
+                    </StackPanel>
+                    
+                </StackPanel>
+                
+                
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
